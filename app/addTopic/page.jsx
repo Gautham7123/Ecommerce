@@ -41,25 +41,26 @@ export default function AddTopic() {
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        className="border border-slate-500 px-8 py-2"
+        className="border border-slate-500 px-8 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 ease-in-out" // Added rounded corners, shadow, and focus effects
         type="text"
-        placeholder="Topic Title"
+        placeholder="Product"
       />
-
+  
       <input
         onChange={(e) => setDescription(e.target.value)}
         value={description}
-        className="border border-slate-500 px-8 py-2"
+        className="border border-slate-500 px-8 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 ease-in-out" // Consistent styles with the first input
         type="text"
-        placeholder="Topic Description"
+        placeholder="Product Description"
       />
-
+  
       <button
         type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+        className="bg-green-600 font-bold text-white py-3 px-6 w-fit rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:bg-green-700" // Added hover effects and shadow
       >
         Add Topic
       </button>
     </form>
   );
+  
 }

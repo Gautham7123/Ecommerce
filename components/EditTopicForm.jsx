@@ -33,13 +33,33 @@ export default function EditTopicForm({ id, title, description }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-3"
+      style={{
+        maxWidth: "500px",
+        margin: "0 auto",
+        padding: "20px",
+        backgroundColor: "#f9f9f9",
+        borderRadius: "12px",
+        boxShadow: "0 6px 12px rgba(0, 0, 0, 0.1)",
+      }}
+    >
       <input
         onChange={(e) => setNewTitle(e.target.value)}
         value={newTitle}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Topic Title"
+        placeholder="Product Title"
+        style={{
+          fontSize: "16px",
+          borderRadius: "8px",
+          transition: "border-color 0.3s, box-shadow 0.3s",
+          outline: "none",
+          padding: "12px",
+        }}
+        onFocus={(e) => (e.target.style.boxShadow = "0 0 6px rgba(0, 150, 136, 0.6)")}
+        onBlur={(e) => (e.target.style.boxShadow = "none")}
       />
 
       <input
@@ -47,10 +67,34 @@ export default function EditTopicForm({ id, title, description }) {
         value={newDescription}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Topic Description"
+        placeholder="Product Description"
+        style={{
+          fontSize: "16px",
+          borderRadius: "8px",
+          transition: "border-color 0.3s, box-shadow 0.3s",
+          outline: "none",
+          padding: "12px",
+        }}
+        onFocus={(e) => (e.target.style.boxShadow = "0 0 6px rgba(0, 150, 136, 0.6)")}
+        onBlur={(e) => (e.target.style.boxShadow = "none")}
       />
 
-      <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit">
+      <button
+        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+        style={{
+          borderRadius: "8px",
+          cursor: "pointer",
+          transition: "background-color 0.3s, transform 0.3s",
+        }}
+        onMouseOver={(e) => {
+          e.target.style.backgroundColor = "#2e7d32";
+          e.target.style.transform = "scale(1.05)";
+        }}
+        onMouseOut={(e) => {
+          e.target.style.backgroundColor = "#4caf50";
+          e.target.style.transform = "scale(1)";
+        }}
+      >
         Update Topic
       </button>
     </form>

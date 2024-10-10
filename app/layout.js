@@ -12,12 +12,53 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+    <head>
+        <style>{`
+            body {
+                background-color: #d3d3d3; /* Set background color to light gray */
+                margin: 0; /* Remove default margin */
+                display: flex; /* Enable flexbox */
+                justify-content: center; /* Center horizontally */
+                align-items: center; /* Center vertically */
+                height: 100vh; /* Full viewport height */
+            }
+
+            .max-w-3xl {
+                background-color: white; /* Set the inside box color to white */
+                border: 2px solid #ccc; /* Light grey border */
+                border-radius: 8px; /* Rounded corners */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+                padding: 16px; /* Add padding inside the box */
+                width: 100%; /* Full width */
+                max-width: 1000px; /* Maximum width for the box */
+                min-height: 500px; /* Increased minimum height for the box */
+            }
+
+            .welcome-message {
+                text-align: center; /* Center the text */
+                font-weight: bold; /* Make the text bold */
+                color: black; /* Set the text color to black */
+                font-size: 2em; /* Increase font size */
+                margin: 16px 0; /* Add margin for spacing */
+                transition: transform 0.3s ease; /* Smooth transition for the transform */
+            }
+
+            .welcome-message:hover {
+                transform: translateY(-10px); /* Move the text up on hover */
+            }
+
+            .mt-8 {
+                padding: 16px; /* Add padding to the top */
+            }
+        `}</style>
+    </head>
+    <body className={inter.className}>
         <div className="max-w-3xl mx-auto p-4">
-          <Navbar />
-          <div className="mt-8">{children}</div>
+            <Navbar />
+            <h1 className="welcome-message">Welcome to Alpha!</h1> {/* Styled welcome message */}
+            <div className="mt-8">{children}</div>
         </div>
-      </body>
-    </html>
+    </body>
+</html>
   );
 }
