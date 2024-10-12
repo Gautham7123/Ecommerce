@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-
+//import ./globals.css;
 const topicSchema = new Schema(
   {
     title: String,
